@@ -1,0 +1,56 @@
+body {
+    font-family: "Courier New", sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 24px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15%;
+    background-color: black;
+    color: white;
+    max-width: 100%;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.header-buttons button {
+    font-family: "Courier New", sans-serif;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-size: 18px;
+    color: #E5E7EB;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.grid {
+    flex: 1;
+}
+
+.row {
+    display: flex;
+}
+
+.square {
+    height: 100%;
+}
