@@ -5,9 +5,11 @@ const newSizeButton = document.querySelector('#new-size');
 newSizeButton.addEventListener('click', () =>{
     let newSize = prompt('Enter new grid size from 16 to 100: ');
 
-    if(newSize > 100 || newSize < 16) {
+    if(newSize > 100 || newSize < DEFAULT_SQUARE_NUM) {
         newSize = prompt('Enter valid number: ');
     }
+
+    localStorage.setItem('size', newSize);
 
     clearGrid();
 
@@ -18,9 +20,15 @@ const resetGridButton = document.querySelector('#reset');
 resetGridButton.addEventListener('click', resetGrid)
 
 function resetGrid() {
+    let oldSize = localStorage.getItem('size');
+
+    if(oldSize === undefined || oldSize < DEFAULT_SQUARE_NUM) {
+        oldSize = DEFAULT_SQUARE_NUM;
+    }
+
     clearGrid();
 
-    drawGrid(DEFAULT_SQUARE_NUM);
+    drawGrid(oldSize);
 }
 
 function clearGrid() {
